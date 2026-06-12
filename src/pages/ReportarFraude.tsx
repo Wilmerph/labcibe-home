@@ -1,8 +1,10 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const API_URL = "https://localhost:7098/api/Fraud";
 
 const ReportarFraude = () => {
+  const navigate = useNavigate();
   const [form, setForm] = useState({
     impostorDetails: "",
     contactInfo: "",
@@ -51,7 +53,17 @@ const ReportarFraude = () => {
       <div className="bg-white rounded-xl shadow-md p-8 w-full max-w-lg">
         <h1 className="text-2xl font-bold mb-6 text-red-600">Reportar Fraude</h1>
 
-        {success && <p className="mb-4 text-green-600 font-medium">✅ Reporte enviado exitosamente.</p>}
+        {success && (
+          <div className="mb-4">
+            <p className="text-green-600 font-medium">✅ Reporte enviado exitosamente.</p>
+            <button
+              onClick={() => navigate("/")}
+              className="mt-3 w-full bg-gray-800 text-white py-2 rounded-lg font-medium hover:bg-gray-900"
+            >
+              Volver al inicio
+            </button>
+          </div>
+        )}
         {error && <p className="mb-4 text-red-500">{error}</p>}
 
         <form onSubmit={handleSubmit} className="space-y-4">
