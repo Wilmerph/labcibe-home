@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-const API_URL = "https://localhost:7098/api/Fraud";
+const API_URL = "http://progra4.runasp.net/api/Fraud";
 
 const ReportarFraude = () => {
   const navigate = useNavigate();
