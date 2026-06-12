@@ -1,1 +1,5 @@
-/* /index.html 200
+# Proxy al API en Monster (HTTPS Netlify → HTTP backend)
+/api/*  http://progra4.runasp.net/api/:splat  200
+
+# SPA
+/*  /index.html  200

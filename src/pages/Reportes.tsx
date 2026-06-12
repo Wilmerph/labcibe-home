@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
-
-const API_URL = "/api/Fraud";
+import { FRAUD_API_URL } from "@/lib/config";
 
 interface Fraud {
   id: number;
@@ -16,7 +15,7 @@ const Reportes = () => {
   const [error, setError] = useState("");
 
   useEffect(() => {
-    fetch(API_URL)
+    fetch(FRAUD_API_URL)
       .then((res) => res.json())
       .then((data) => { setReportes(data); setLoading(false); })
       .catch(() => { setError("Error al cargar los reportes."); setLoading(false); });

@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-
-const API_URL = "http://progra4.runasp.net/api/Fraud";
+import { FRAUD_API_URL } from "@/lib/config";
 
 const ReportarFraude = () => {
   const navigate = useNavigate();
@@ -30,7 +29,7 @@ const ReportarFraude = () => {
 
     setLoading(true);
     try {
-      const res = await fetch(API_URL, {
+      const res = await fetch(FRAUD_API_URL, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),
